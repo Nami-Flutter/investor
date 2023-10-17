@@ -1,0 +1,204 @@
+{
+    "login": "Log in",
+  "signup": "Signup",
+  "username": "username",
+  "password": "password",
+  "nationality": "nationality",
+  "yourexperience": "Experience",
+  "yearsOfExperience": "Years of experience",
+  "personalInformation": "Personal Information",
+  "rememberMe": "Remember Me ",
+  "forgetPassword": "Forget Password ?",
+  "accountType": "Account type",
+  "inevstor": "Investor",
+  "startup": "Startup owner",
+  "id": "National Num",
+  "email": "Email",
+  "phone": "Phone",
+  "confirmPassword": "ConfirmPassword",
+  "verify": "Verify",
+  "enterCode": "Enter the 4 digits code \n received by number ",
+  "codenotReceived": "Con not Received",
+  "EN": "AR",
+  "isProjectAlive": "Is project alive or still an idea",
+  "explainTheProblem": "Explain the problem that the project aim to solve",
+  "explainHowYouRSpeacial": "Explain how your project solve it in a special way",
+  "explainInTwoRows": "Explain your project clearly in 2 rows maximum",
+
+
+
+  "showProfile"   :  "Show Personal Profile",
+  "partnersAndContracts"   :  "Partners And Contracts :",
+  "generalVisionOfTheProject":"General Vision Of The Project :",
+  "financialPerformanceAndFinancing":"Financial Performance and Financing :",
+  "offeredInvestmentOpportunity":"Offered Investment Opportunity :",
+  "documents":"Documents :",
+  "confirmRequest":"Confirm Request",
+  "numberOfFoundingPartners:":"Number of founding partners:",
+  "namesOfFoundingPartners:":"Names of the founding partners:",
+  "contractsAndMemorandumsOfUnderstanding:":"Contracts and memorandums of understanding:",
+  "theProblemThatTheProjectSeeksToSolve:":"The problem that the project seeks to solve:",
+  "howDoesTheProjectSolveThisProblem:":"How does the project solve this problem:",
+  "competitiveAdvantageOfTheProject:":"Competitive advantage of the project:",
+  "targetMarketSize:":"Target market size:",
+  "listOfCompetitors:":"List of competitors:",
+  "dateOfInceptionOfTheProject:":"Date of inception of the project:",
+  "projectProfitsSinceItsLaunch:":"Project profits since its launch:",
+  "projectExpensesAndCostsSinceItsLaunch:":"Project expenses and costs since its launch:",
+  "mechanismForFinancingProjectExpensesAndCosts:":"Mechanism for financing project expenses and costs:",
+  "typeOfTourOffered:":"Type of tour offered:",
+  "requiredInvestmentAmount:":"Required investment amount:",
+  "percentageOfferedByTheCompany:":"Percentage offered by the company:",
+
+
+
+  "favorite":"Favorite",
+  "completedOrders":"Completed Orders",
+  "currentOrders":"Current orders",
+
+
+  "type": "setting",
+
+  "confirm":"Confirm",
+  "setting":"Setting",
+  "accountSetting":"Setting Account",
+  "problem":"Problems",
+  "language":"Languages",
+  "general":"General",
+  "whoAreWe":"Who we are",
+  "investmentLibrary":"Investment library",
+  "logout":"Logout",
+  "areYouSure": "Are You Sure",
+  "cancel": "Cancel",
+  "deals":"Deals",
+  "cancelTheDeal": "Cancel the deal",
+  "concludingTheDeal": "Concluding the deal",
+
+
+
+  "specialProjects":"Special Projects",
+  "availableChances":"Available investment opportunities",
+  "typeOfInvestmentRound":"Type Of Investment Round",
+
+
+
+
+  "notifications":"Notifications",
+  "investmentRequestHasBeenSent":"Investment request has been sent",
+  "creditCardAdded":"Credit card added",
+  "investmentRequestHasBeenAnswered":"Investment request has been answered",
+  "investmentApplicationFeeHasBeenDeducted":"Investment application fee has been deducted",
+  "congratulationsAnInvestmentTransactionHasSeenCompletedSuccessfully":"Congratulations AnInvestment Transaction has seen completed successfully",
+
+
+
+  "enterEmail":"please enter your email",
+  "enterUserName":"please enter your username",
+  "enterPassword":"please enter your password",
+  "enterId":"please enter your id",
+  "enterMobileNumber":"please enter your mobile number",
+  "passwordDoesNotMatch":"password does not match",
+  "enterNationality":"please enter your nationality",
+  "enterYourAcademicAndBusinessBackground":"please enter your academic and business background",
+  "yourAcademicAndBusinessBackground":"your academic and business background",
+
+
+
+  "deal": "Deal",
+  "continue": "Continue",
+  "home": "Home",
+  "confirmOrder": "Confirm Order",
+  "sendInvestmentRequest": "Send investment request",
+  "yourRequestHasBeenSentSuccessfully": "Your request has been sent successfully",
+  "reportProblem": "Report a problem",
+  "ok": "Confirm",
+  "investmentRequest": "Investment Request",
+
+
+
+
+
+  "chooseTheTypeOfProblem": "Choose the type of problem",
+  "howCanWeImproveOurService": "How can we improve our service?",
+  "saveCardInformation": "Save card information",
+
+  "yourRequestHasNotBeenAnsweredYet": "Your request has not been answered yet",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "document": "Document",
+
+
+
+  "creditCard": "Credit card",
+  "otherPaymentMethods": "Other payment",
+  "theNameOfTheCardHolder": "The name of the card holder",
+  "cardNumber": "Card Number",
+  "cardDate": "Card Date",
+  "securityCode": "Security code",
+  "notHappy": "We are saddened that you are facing these problems with our application. Please inform us of the reason for your problem",
+  "choseSectors": "Chose Sectors",
+  "choseCategories":"Chose Categories",
+  "weakPassword":"Password must be more than six characters",
+  "updateProfile":"Update Profile",
+  "send":"Send",
+  "pleaseEnterYourOpinion": "Enter Opinion",
+    "pleaseEnterCode": "Enter Code",
+
+
+  "problemReported":"Problem Reported Successfully",
+  "loggedOutSuccessfully": "LoggedOut Successfully",
+  "loggedInSuccessfully": "Logged In Successfully",
+  "accountDataRegisteredSuccessfully": "Account Data Registered Successfully",
+  "alreadyRegistered": "Already Registered",
+  "updateDone": "Update Done",
+  "filed": "Failed",
+  "code": "Code",
+  "welcome": "Welcome back",
+  "codeSentSuccessfully":"Code Sent Successfully Check Your Gmail",
+  "fileSaved": "File Saved Successfully",
+  "failedSave": "File Failed",
+  "save":"Save",
+  "enterName": "Enter Name",
+  "downloadFile": "Download File",
+  "requiredField": "Required Field",
+  "successfullyAddedInvestment": "Successfully Added New Investment Order",
+  "Connection timeout with API server": "Connection timeout with API server",
+  "Request to API server was cancelled": "Request to API server was cancelled",
+  "Connection to API server failed due to internet connection": "Connection to API server failed due to internet connection",
+  "Receive timeout in connection with API server": "Receive timeout in connection with API server",
+  "Send timeout with server": "Send timeout with server",
+  "filter": "Filter",
+  "sectorKind": "Sector Kind",
+  "tourKind": "Tour Kind",
+  "emailCantFound": "Email Cant Found",
+  "Code Or Password Not Correct": "Code Or Password Not Correct",
+  "checkYourInternet": "check Your Internet",
+  "SuccessfullyAdded":"Added to Favorite Successfully",
+  "SuccessfullyDeleted": "Deleted From Favorite Successfully",
+  "validEmail": "Enter Valid Email",
+  "emailUsed": "Email or Phone Number used once ",
+  "resend": "Resend Code",
+  "Invalid credential": "Email is not defined",
+  "dealSuccess": "Deal completed success ?",
+  "youShouldKnow": "You Should Know ,",
+  "onCancelDeal": "If you choose to cancel the deal, the conversation will be deleted from current orders.",
+  "wrongCode": "The Code Entered Is Wrong",
+  "wrongPhone": "Phone number is incorrect",
+  "noData": "Do data for show"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

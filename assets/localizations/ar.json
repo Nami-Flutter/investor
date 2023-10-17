@@ -1,0 +1,202 @@
+{
+  "login": "تسجيل دخول",
+  "signup": "انشاء حساب",
+  "username": "اسم المستخدم",
+  "password": "كلمة المرور",
+  "nationality": "الجنسيه /الاقامة ",
+  "yourexperience": "خلفيتك العلمية والتجارية",
+  "yearsOfExperience": "عدد سنوات الخبره",
+  "personalInformation": "المعلومات الشخصية",
+  "rememberMe": "تذكر معلومات تسجيل الدخول",
+  "forgetPassword": "هل نسيت كلمة المرور؟",
+  "accountType": "نوع الحساب",
+  "inevstor": "مستثمر",
+  "startup": "رائد اعمال",
+  "id": "رقم الهوية",
+  "email": "البريد الالكتروني",
+  "phone": "رقم الهاتف",
+  "confirmPassword": "تاكيد كلمة المرور",
+  "verify": "تحقق",
+  "enterCode": "ادخل الرمز المكون من اربعة ارقام \n المرسل على الرقم ",
+  "codenotReceived": "لم اتلقى الكود",
+  "EN": "EN",
+  "isProjectAlive": "هل المشروع قائم ام فكرة قيد الدراسة",
+  "explainTheProblem": "وضح المشكلة التى يسعى مشروعك لحلها",
+  "explainHowYouRSpeacial": "وضح كيف يعالج منتجك المشكلة بطريقة فريدة",
+  "explainInTwoRows": "اشرح مشروعك بوضوح فى سطرين كحد اقصى",
+
+
+
+  "showProfile"   :  "رؤية الملف الشخصي",
+  "partnersAndContracts"   :  "الشركاء المؤسسين و العقود :",
+   "generalVisionOfTheProject":"الرؤية العامة للمشروع :",
+   "financialPerformanceAndFinancing":"الاداء المالي و التمويل :",
+   "offeredInvestmentOpportunity":"فرصة الإستثمار المطروحة وشروطها :",
+   "documents":"المستندات :",
+   "confirmRequest":"تاكيد الطلب",
+  "numberOfFoundingPartners:":"عدد الشركاء المؤسسين :",
+  "namesOfFoundingPartners:":"اسماء الشركاء المؤسسين :",
+  "contractsAndMemorandumsOfUnderstanding:":"العقود ومذكرات التفاهم :",
+  "theProblemThatTheProjectSeeksToSolve:":"المشكلة التي يسعى المشروع لحلها :",
+  "howDoesTheProjectSolveThisProblem:":"كيف يعالج المشروع بحل هذه المشكلة :",
+  "competitiveAdvantageOfTheProject:":"الميزة التنافسية للمشروع :",
+  "targetMarketSize:":"حجم السوق المستهدف :",
+  "listOfCompetitors:":"قائمة المنافسين :",
+  "dateOfInceptionOfTheProject:":"تاريخ نشأة المشروع :",
+  "projectProfitsSinceItsLaunch:":"ارباح المشروع منذ انطلاقه :",
+  "projectExpensesAndCostsSinceItsLaunch:":"مصروفات و تكاليف المشروع منذ إنطلاقه :",
+  "mechanismForFinancingProjectExpensesAndCosts:":"الية تمويل مصروفات و تكاليف المشروع :",
+  "typeOfTourOffered:":"نوع الجولة المطروحة :",
+  "requiredInvestmentAmount:":"المبلغ الإستثماري المطلوب :",
+  "percentageOfferedByTheCompany:":"النسبة المطروحة من الشركة :",
+
+
+
+
+  "favorite":"المفضلة",
+  "completedOrders":"الطلبات المكتمله",
+  "currentOrders":"الطلبات الحاليه",
+  "deals":"الصفقات",
+  "cancelTheDeal": "إلغاء الصفقة",
+  "concludingTheDeal": "إبرام الصفقة",
+
+
+
+  "confirm":"تاكيد",
+  "setting":"الاعدادات",
+  "accountSetting":"اعدادات الحساب",
+  "problem":"ابلاغ عن مشكلة",
+  "language":"اللغة",
+   "general":"عام",
+  "whoAreWe":"من نحن",
+   "investmentLibrary":"المكتبة الاستثمارية",
+   "logout":"تسجيل الخروج",
+  "areYouSure": "هل انت متاكد",
+  "cancel": "الغاء",
+
+
+  "specialProjects":"مشاريع مميزه",
+  "availableChances":"الفرص الاستثمارية المتاحة",
+  "typeOfInvestmentRound":"نوع الجوله الاستثماريه",
+  "typeOfInvestmentRound2":"نوع الجوله الاستثماريه",
+
+
+  "notifications":"الاشعارات",
+  "investmentRequestHasBeenSent":"تم إرسال طلب إستثمار",
+  "creditCardAdded":"تم إضافة بطاقة ائتمان",
+  "investmentRequestHasBeenAnswered":"تم الرد على طلب الإستثمار",
+  "investmentApplicationFeeHasBeenDeducted":"تم خصم رسوم طلب الإستثمار",
+  "congratulationsAnInvestmentTransactionHasSeenCompletedSuccessfully":"تهانينا، تم عقد صفقة إستثمارية بنجاح",
+
+
+
+  "enterEmail":"برجاء ادخال البريد الالكتروني",
+  "enterUserName":"برجاء ادخال الاسم",
+  "enterPassword":"برجاء ادخال رقم المرور",
+  "enterId":"برجاء ادخال رقم الهويه",
+  "enterMobileNumber":"برجاء ادخال رقم الموبايل",
+  "passwordDoesNotMatch":"كلمه المرور غير متطابقه",
+  "enterNationality":"برجاء ادخال الجنسيه",
+  "enterYourAcademicAndBusinessBackground":"ادخل خلفيتك العلمية و التجارية",
+  "yourAcademicAndBusinessBackground":" خلفيتك العلمية و التجارية",
+
+
+
+
+
+
+  "deal": "صفقه",
+  "home": "الرئيسية",
+  "confirmOrder": "تأكيد الطلب",
+  "sendInvestmentRequest": "ارسل طلب الإستثمار",
+  "yourRequestHasBeenSentSuccessfully": "تم إرسال طلبك بنجاح",
+  "reportProblem": "الإبلاغ عن مشكلة",
+  "ok": "موافق",
+  "investmentRequest": "طلب إستثمار",
+
+
+
+
+
+
+
+
+
+
+
+
+  "chooseTheTypeOfProblem": "إختر نوع المشكلة",
+  "saveCardInformation": "حفظ بيانات البطاقة",
+  "howCanWeImproveOurService": "كيف يمكننا تحسين خدمتنا ؟",
+
+
+  "yourRequestHasNotBeenAnsweredYet": "لم يتم الرد على طلبك بعد",
+  "camera": "الكاميرا",
+  "gallery": "المعرض",
+  "document": "مستند",
+  "continue": "استمرار",
+
+
+
+  "creditCard": "بطاقة ائتمان",
+  "otherPaymentMethods": "طرق الدفع الأخرى",
+  "theNameOfTheCardHolder": "إسم صاحب البطاقة",
+  "cardNumber": "رقم البطاقة",
+  "cardDate": "تاريخ البطاقة",
+  "securityCode": "رمز الأمان",
+  "notHappy": "يحزننا انك تواجه بعض المشاكل في تطبيقنا الرجاء اطلاعنا علي سبب مشكلتك",
+  "choseSectors": "اختر قطاعات تهمك ",
+  "choseCategories": "يرجي تحديد القيمه التي ترغب الاستثمار بها ",
+  "weakPassword":"كلمه السر يجب ان تكون اكثر من 6 حروف",
+  "updateProfile":"تعديل الحساب",
+  "send":"ارسال",
+  "pleaseEnterYourOpinion": "ادخل  رأيك",
+  "pleaseEnterCode": "ادخل الرمز",
+
+
+
+
+  "problemReported":"تم تسجيل الشكوي بنجاح",
+  "loggedOutSuccessfully": "تم تسجيل الخروج بنجاح",
+  "loggedInSuccessfully":"تم تسجيل الدخول بنجاح",
+  "accountDataRegisteredSuccessfully": "تم انشاء الحساب بنجاح",
+  "alreadyRegistered": "الحساب موجود بالفعل",
+  "updateDone": "تم التعديل",
+  "filed": "فشل",
+  "code": "رمز الامان",
+  "welcome":"مرحبا",
+  "codeSentSuccessfully": "تم ارسال الرمز بنجاح تفقد ايميلك",
+  "fileSaved": "تم حفظ الملف بنجاح",
+  "failedSave": "خطأ اثناء التحميل حاول مجددا",
+  "save":"حفظ",
+  "enterName": "الاسم",
+  "downloadFile": "تجميل الملف",
+  "requiredField": "الحقل مطلوب",
+  "successfullyAddedInvestment": "تم اضافه طلب استثمار بنجاح",
+  "Connection timeout with API server": "انتهت مهلة الاتصال بالخادم",
+  "Request to API server was cancelled": "تم إلغاء الطلب إلى خادم",
+  "Connection to API server failed due to internet connection": "فشل الاتصال بخادم بسبب الاتصال بالإنترنت",
+  "Receive timeout in connection with API server": "تلقي المهلة فيما يتعلق بخادم",
+  "Send timeout with server": "إرسال المهلة مع الخادم",
+  "filter": "تصفية",
+  "sectorKind": "نوع القطاع",
+  "tourKind": "نوع الجوله",
+  "emailCantFound": "البريد غير موجود",
+  "Code Or Password Not Correct": "البريد الإلكتروني أو الكود غير صحيح",
+  "checkYourInternet":"تاكد من الاتصال بالانترنت",
+  "SuccessfullyAdded":"تم الاضافه الي المفضله بنجاح",
+  "SuccessfullyDeleted": "تم الحذف من المفضله بنجاح",
+  "validEmail": "البريد الالكتروني غير صحيح",
+  "emailUsed": "البريد الالكتروني او رقم الهاتف مستخدمين من قبل",
+  "resend": "اعاده ارسال الرمز",
+  "Invalid credential": "البريد الالكتروني او كلمه المرور غير صحيحه",
+  "dealSuccess": "هل تمت الصفقة بنجاح ؟",
+  "youShouldKnow": "يرجى العلم,",
+  "onCancelDeal": " في حال إختيار إلغاء الصفقة سيتم حذف المحادثة من الطلبات الحالية.",
+  "wrongCode": "الكود غير صحيح",
+  "wrongPhone": "الرقم غير صحيح",
+  "noData": "لايوجد بيانات لعرضها"
+
+
+
+}
