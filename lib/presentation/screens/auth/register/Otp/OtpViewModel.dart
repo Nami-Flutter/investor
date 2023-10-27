@@ -34,35 +34,40 @@ class OtpViewModel with ChangeNotifier {
 
 
 
- Future sendSms({required bool newAccount,required  phoneNumber,required context}) async {
+  Future sendSms({required bool newAccount,required  phoneNumber,required context}) async {
     _isSendSmsLoading=true;
     title= AppStrings.donotReceive.tr();
     seconds=45;
     notifyListeners();
     await auth.verifyPhoneNumber(
-      phoneNumber: '+20 $phoneNumber',
+      phoneNumber: '+20 10 02459682',
       verificationCompleted: (PhoneAuthCredential credential) {
       },
-      verificationFailed: (FirebaseAuthException e) {},
+      verificationFailed: (FirebaseAuthException e) {
+        print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee$e");
+        snackBar(context: context, message: "blockDevice".tr(), color: Colors.red);
+        _isSendSmsLoading=false;
+        notifyListeners();
+      },
       codeSent: (String verificationId, int? resendToken) {
-        _isSendSmsLoading=true;
         title= AppStrings.donotReceive.tr();
-        seconds=4;
+        seconds=45;
         notifyListeners();
         verificationID=verificationId;
         NavigationService.push( OTP(newAccount: newAccount,phoneNumber: phoneNumber,));
       },
       codeAutoRetrievalTimeout: (String verificationId) {},
     ).then((value) {
-      _isSendSmsLoading=false;
-      notifyListeners();
+      if(verificationID!=""){
+        _isSendSmsLoading=false;
+        notifyListeners();
+      }
+
     }).catchError((onError){
       _isSendSmsLoading=false;
       notifyListeners();
-      snackBar(context: context, message:"", color: Colors.red);
+
     });
-    _isSendSmsLoading=false;
-    notifyListeners();
   }
 
 

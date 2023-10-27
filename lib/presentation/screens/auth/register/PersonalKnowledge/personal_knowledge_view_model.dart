@@ -58,6 +58,7 @@ class PersonalKnowledgeViewModel with ChangeNotifier {
     else
     {
     _isSectorLoading = false;
+    notifyListeners();
     ApiChecker.checkApi(context, responseModel);
     }
     _isSectorLoading = false;

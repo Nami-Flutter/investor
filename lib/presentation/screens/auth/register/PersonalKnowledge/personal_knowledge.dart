@@ -303,7 +303,7 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
         }
       },
       dropDownItemCount: 2,
-      dropDownList: data.categoriesList,
+      dropDownList: data.sectorList,
       onChanged: (val) {
         Provider.of<RegisterViewModel>(context,listen: false).categoriesId=_cnt1.dropDownValue!.value;
       },
@@ -330,7 +330,7 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
       },
       dropDownItemCount:  3,
       dropDownList:
-      data.sectorList,
+      data.categoriesList,
       onChanged: (val) {
 
         Provider.of<RegisterViewModel>(context,listen: false).sectorId=_cnt2.dropDownValue!.value;

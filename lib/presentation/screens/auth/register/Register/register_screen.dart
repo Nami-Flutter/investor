@@ -119,7 +119,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               height: 2.h,
             ),
             widget.newAccount==false?
-                Container():
+            Container():
             _password(),
             SizedBox(
               height: 2.h,
@@ -173,8 +173,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           return AppStrings.enterMobileNumber.tr();
         } else if(value.length<10){
           return "wrongPhone".tr();
-          }     else{
-            return null;
+        }     else{
+          return null;
         }
 
       },
@@ -216,40 +216,40 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   Widget _registerButton() {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 35),
-        child: AnimatedButton(
-    isLoading: Provider.of<OtpViewModel>(context).isSendSmsLoading==true|| Provider.of<PersonalKnowledgeViewModel>(context).isSectorLoading==true?true:false,
-    title: widget.newAccount==false?
+      padding: const EdgeInsets.symmetric(horizontal: 35),
+      child: AnimatedButton(
+        isLoading:widget.newAccount==false?context.watch<PersonalKnowledgeViewModel>().isSectorLoading: context.watch<OtpViewModel>().isSendSmsLoading,
+        title: widget.newAccount==false?
         "continue".tr()
-    :AppStrings.createAccount.tr(),
-    onPressed: () {
-      if(widget.newAccount==false){
-        Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getSectors(context,);
-        Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getCategories(context,);
-        NavigationService.push(PersonalKnowledgeScreen(newAccount: widget.newAccount));
-      }else{
-        if (formKey.currentState!.validate()) {
-          Provider.of<RegisterViewModel>(context, listen: false).national_num = idController.text;
-          Provider.of<RegisterViewModel>(context, listen: false).email = emailController.text;
-          Provider.of<RegisterViewModel>(context, listen: false).phone = phoneNumberController.text;
-          Provider.of<RegisterViewModel>(context, listen: false).password = passwordController.text;
-          Provider.of<OtpViewModel>(context, listen: false).sendSms(newAccount: widget.newAccount,phoneNumber: phoneNumberController.text,context: context).then((value) {
+            :AppStrings.createAccount.tr(),
+        onPressed: () {
+          if(widget.newAccount==false){
             Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getSectors(context,);
             Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getCategories(context,);
-          }).catchError((onError){
-            print(onError);
-          });
+            NavigationService.push(PersonalKnowledgeScreen(newAccount: widget.newAccount));
+          }else{
+            if (formKey.currentState!.validate()) {
+              Provider.of<RegisterViewModel>(context, listen: false).national_num = idController.text;
+              Provider.of<RegisterViewModel>(context, listen: false).email = emailController.text;
+              Provider.of<RegisterViewModel>(context, listen: false).phone = phoneNumberController.text;
+              Provider.of<RegisterViewModel>(context, listen: false).password = passwordController.text;
+              Provider.of<OtpViewModel>(context, listen: false).sendSms(newAccount: widget.newAccount,phoneNumber: phoneNumberController.text,context: context).then((value) {
+                Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getSectors(context,);
+                Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getCategories(context,);
+              }).catchError((onError){
+                print(onError);
+              });
 
-        }
+            }
 
-      }
+          }
 
-    },
-    fontWeight: FontWeight.w400,
-    textSize: 18,
-    textColor: Colors.white,
-        ),
-      );
+        },
+        fontWeight: FontWeight.w400,
+        textSize: 18,
+        textColor: Colors.white,
+      ),
+    );
   }
 
 

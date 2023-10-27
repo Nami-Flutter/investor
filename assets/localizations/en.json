@@ -184,7 +184,8 @@
   "onCancelDeal": "If you choose to cancel the deal, the conversation will be deleted from current orders.",
   "wrongCode": "The Code Entered Is Wrong",
   "wrongPhone": "Phone number is incorrect",
-  "noData": "Do data for show"
+  "noData": "Do data for show",
+  "blockDevice": "This Device Is Blocked"
 
 
 
