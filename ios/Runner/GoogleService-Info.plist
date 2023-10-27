@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.investor</string>
+	<string>com.apps.investor</string>
 	<key>PROJECT_ID</key>
 	<string>investor-a6f43</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:159537848845:ios:676c1e04e781b04e962b44</string>
+	<string>1:159537848845:ios:47e17a45f3990c70962b44</string>
 </dict>
 </plist>
