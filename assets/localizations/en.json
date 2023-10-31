@@ -17,7 +17,7 @@
   "phone": "Phone",
   "confirmPassword": "ConfirmPassword",
   "verify": "Verify",
-  "enterCode": "Enter the 4 digits code \n received by number ",
+  "enterCode": "Enter the 6 digits code \n received by number ",
   "codenotReceived": "Con not Received",
   "EN": "AR",
   "isProjectAlive": "Is project alive or still an idea",
