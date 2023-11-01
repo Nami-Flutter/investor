@@ -50,7 +50,9 @@ class AnimatedButton extends StatelessWidget {
         color: backGroundColor,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(radius))),
-        onPressed: onPressed,
+        onPressed:
+        isLoading==true?(){}:
+        onPressed,
         child:isLoading==true? const CircularProgressIndicator(color: Colors.white,strokeWidth: 2,):
         DefaultText(
           title:  title,
