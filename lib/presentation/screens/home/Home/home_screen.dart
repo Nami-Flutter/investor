@@ -26,7 +26,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<HomeViewModel>(context, listen: false)
+          .getAllProjects(context);
+      if(  Provider.of<HomeViewModel>(context,listen: false).sectorModel?.data==null||Provider.of<HomeViewModel>(context,listen: false).investmentToursModel?.data==null){
+        Provider.of<HomeViewModel>(context, listen: false)
+            .getHomeInvestmentTours(context);
+        Provider.of<HomeViewModel>(context, listen: false)
+            .getHomeSectors(context);
+      }
+    });
 
     // TODO: implement initState
     super.initState();
@@ -116,14 +125,16 @@ class _HomeScreenState extends State<HomeScreen> {
       value.isSpecialLoading==true?
       const Center(child:  CircularProgressIndicator(),)
       :
-      value.specialProjectsModel.data!.isEmpty?
-      _noData()
-          :
-      value.specialProjectsModel.data==null?
-      _noInternet():
+
       ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => Row(
+          itemBuilder: (context, index) =>
+          value.specialProjectsModel.data!.isEmpty?
+          _noData()
+              :
+          value.specialProjectsModel.data==null?
+          _noInternet():
+              Row(
             children: [
               SizedBox(
                 width: 4.w,

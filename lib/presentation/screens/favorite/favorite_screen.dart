@@ -68,7 +68,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Image.asset(AppImages.filterIcon,color: Colors.transparent,),),
