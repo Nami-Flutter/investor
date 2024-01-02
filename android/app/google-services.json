@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:159537848845:android:3ad057b0cc5764d9962b44",
+        "mobilesdk_app_id": "1:159537848845:android:03253347b49a29b2962b44",
         "android_client_info": {
-          "package_name": "com.investor"
+          "package_name": "com.apps.investorBusiness"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "159537848845-i2p1ud0bca2stmlqbtidrjkb20k6hc4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBnWg_0Seikfhrx2n9jl8MXOMvFp81l7-E"
@@ -20,7 +25,71 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159537848845-i2p1ud0bca2stmlqbtidrjkb20k6hc4u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "159537848845-3c8mpld77gfm7bdgq6juq5lnrgvn891f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apps.investor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159537848845:android:3ad057b0cc5764d9962b44",
+        "android_client_info": {
+          "package_name": "com.investor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159537848845-95mr94q0pavpf4lb3jhkllh8t30gif98.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.investor",
+            "certificate_hash": "a46189b67f15d8ebaad02e0b7f70658d5fe1fae6"
+          }
+        },
+        {
+          "client_id": "159537848845-k57d52bvq3d2ce5norg8gp7f3o132ok7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.investor",
+            "certificate_hash": "61fe2b8068abef93be5d7dd8fac3f838d6fa2392"
+          }
+        },
+        {
+          "client_id": "159537848845-i2p1ud0bca2stmlqbtidrjkb20k6hc4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnWg_0Seikfhrx2n9jl8MXOMvFp81l7-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159537848845-i2p1ud0bca2stmlqbtidrjkb20k6hc4u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "159537848845-3c8mpld77gfm7bdgq6juq5lnrgvn891f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apps.investor"
+              }
+            }
+          ]
         }
       }
     }

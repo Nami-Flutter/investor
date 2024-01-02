@@ -64,14 +64,15 @@ class _InputFieldState extends State<InputField> {
       // },
       // onFieldSubmitted: (value)=>widget.onFieldSubmitted(value),
       autofocus: widget.autoFocus,
+      maxLength: widget.keyboardType == TextInputType.phone?10:null,
       // onEditingComplete: ()=>widget.onEditingComplete(),
       onChanged: (p) => widget.onchange(p),
       // autofocus: false,
       initialValue: widget.initialValue,
       maxLines: widget.maxLines,
       inputFormatters: <TextInputFormatter>[
-        if (widget.keyboardType == TextInputType.phone)
-          FilteringTextInputFormatter.digitsOnly
+        if (widget.keyboardType == TextInputType.phone)FilteringTextInputFormatter.digitsOnly,
+
       ],
       keyboardType: widget.keyboardType,
       readOnly: widget.readonly,
@@ -98,6 +99,7 @@ class _InputFieldState extends State<InputField> {
             fontSize: 14,
             fontWeight: FontWeight.w400),
         prefixIcon: widget.prefixIcon,
+        counterText: '',
         suffixIcon: widget.secure
             ? IconButton(
                 onPressed: () {

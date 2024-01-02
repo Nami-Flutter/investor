@@ -61,7 +61,7 @@ class RegisterViewModel with ChangeNotifier {
   }
 
   Future<ApiResponse> registerApi({required context,required nationality,required name,required experience}) async {
-
+    print('data=>>>>>${categoriesId}   $sectorId');
      File? file;
        file = File(imagePath);
 
@@ -111,7 +111,7 @@ class RegisterViewModel with ChangeNotifier {
         }
         snackBar(context: context,message: "accountDataRegisteredSuccessfully".tr(), color:  Colors.green);
         saveUserData.saveLoggedIn(true);
-        NavigationService.pushAndRemoveUntil(const HomeLayoutScreen());
+        NavigationService.pushAndRemoveUntil( HomeLayoutScreen());
       }else{
         if(_userModel?.code == 405){
           snackBar(context: context,message: "alreadyRegistered".tr(), color: Colors.red);
@@ -129,9 +129,6 @@ class RegisterViewModel with ChangeNotifier {
     notifyListeners();
     return responseModel;
   }
-
-
-
 
   Future<ApiResponse> updateProfile({required context,required nationality,required name,required experience}) async {
 
@@ -186,7 +183,7 @@ class RegisterViewModel with ChangeNotifier {
           saveUserData.saveUserEmail("${_userModel?.data?.email}");
         }
         snackBar(context: context,message: "updateDone".tr(), color:  Colors.green);
-        NavigationService.pushAndRemoveUntil(const HomeLayoutScreen());
+        NavigationService.pushAndRemoveUntil( HomeLayoutScreen());
       }else{
 
         _isLoading = false;

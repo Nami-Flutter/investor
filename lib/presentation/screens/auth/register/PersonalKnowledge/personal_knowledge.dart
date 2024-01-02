@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:speech/core/config/app_Images.dart';
@@ -61,7 +62,12 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
       backGroundController.text=Provider.of<SettingViewModel>(context,listen: false).userModel.data!.experience.toString();
     }
     // TODO: implement initState
+
     super.initState();
+    Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getSectors(context,);
+    Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getCategories(context,);
+
+
   }
 
 
@@ -72,85 +78,91 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    return SafeArea(
-      child: Consumer<PersonalKnowledgeViewModel>(builder:(context, value, child) =>
-          Scaffold(
+    return Consumer<PersonalKnowledgeViewModel>(builder:(context, value, child) =>
+        Scaffold(
+          appBar: AppBar(
+            toolbarHeight: 0,
+            elevation: 0,
+            surfaceTintColor: Colors.transparent,
+            systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: AppColors.primaryColor,statusBarIconBrightness: Brightness.light),
+          ),
+
           body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: [
-                    Container(
-                      height: 34.h,
-                    ),
-                    LogoContainer(
-                      ctx: context,
-                      height: 26.h,
-                    ),
-                 Provider.of<RegisterViewModel>(context).c == "0"
-                        ? Positioned(
-                            top: 19.h,
-                            left: 0,
-                            right: 0,
-                            child: SizedBox(
-                                height: 26.w,
-                                child:const CircleAvatar(
-                                  child: Icon(Icons.person),
-                                )
-                            ))
-                        : Positioned(
-                            top: 20.h,
-                            child: CircleAvatar(
-                              radius: 13.w,
-                              backgroundImage: FileImage(File( Provider.of<RegisterViewModel>(context).imagePath)),
-                            ),
+          child: Column(
+            children: [
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Container(
+                    height: 34.h,
+                  ),
+                  LogoContainer(
+                    ctx: context,
+                    height: 26.h,
+                    arrowBack: true,
+                  ),
+               Provider.of<RegisterViewModel>(context).c == "0"
+                      ? Positioned(
+                          top: 19.h,
+                          left: 0,
+                          right: 0,
+                          child: SizedBox(
+                              height: 26.w,
+                              child:const CircleAvatar(
+                                child: Icon(Icons.person),
+                              )
+                          ))
+                      : Positioned(
+                          top: 20.h,
+                          child: CircleAvatar(
+                            radius: 13.w,
+                            backgroundImage: FileImage(File( Provider.of<RegisterViewModel>(context).imagePath)),
                           ),
-                    Positioned(
-                        top: 26.5.h,
-                        right: 35.w,
-                        child: CircleAvatar(
-                          radius: 20,
-                          child: IconButton(
-                              onPressed: () {
-                                showModalBottomSheet(
-                                    shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(30))),
-                                    barrierColor: Colors.black45,
-                                    context: context,
-                                    builder: (context) => _bottomSheet());
-                              },
-                              icon: const Icon(Icons.camera_alt)),
-                        )),
-                  ],
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        DefaultText(
-                          title:"personalInformation".tr(),
-                          size: 16.sp,
-                          color: AppColors.boldText,
-                          fontWeight: FontWeight.w500,
                         ),
-                        SizedBox(
-                          height: 1.h,
-                        ),
-                        _form(data: value),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        _button()
-                      ],
-                    ),
+                  Positioned(
+                      top: 26.5.h,
+                      right: 35.w,
+                      child: CircleAvatar(
+                        radius: 20,
+                        child: IconButton(
+                            onPressed: () {
+                              showModalBottomSheet(
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(30))),
+                                  barrierColor: Colors.black45,
+                                  context: context,
+                                  builder: (context) => _bottomSheet());
+                            },
+                            icon: const Icon(Icons.camera_alt)),
+                      )),
+                ],
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DefaultText(
+                        title:"personalInformation".tr(),
+                        size: 16.sp,
+                        color: AppColors.boldText,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      _form(data: value),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      _button()
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:speech/core/config/app_colors.dart';
 import 'package:speech/core/config/app_strings.dart';
@@ -47,55 +48,59 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            LogoContainer(
-              height: 30.h,
-              arrowBack: false,
-              ctx: context,
-            ),
-            SizedBox(
-              height: 2.5.h,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      DefaultText(
-                        title: AppStrings.login.tr(),
-                        size: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.boldText,
-                      ),
-                      SizedBox(
-                        height: 2.h,
-                      ),
-                      _form(),
-                      _forgetPasswordRow(),
-                      SizedBox(
-                        height: 8.h,
-                      ),
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: AppColors.primaryColor,statusBarIconBrightness: Brightness.light),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          LogoContainer(
+            height: 30.h,
+            arrowBack: false,
+            ctx: context,
+          ),
+          SizedBox(
+            height: 2.5.h,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DefaultText(
+                      title: AppStrings.login.tr(),
+                      size: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.boldText,
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    _form(),
+                    _forgetPasswordRow(),
+                    SizedBox(
+                      height: 8.h,
+                    ),
 
-                      // _loginButton(),
-                      _loginButton(),
+                    // _loginButton(),
+                    _loginButton(),
 
-                      SizedBox(
-                        height: 7.h,
-                      ),
-                      _registerTextButton()
-                    ],
-                  ),
+                    SizedBox(
+                      height: 7.h,
+                    ),
+                    _registerTextButton()
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

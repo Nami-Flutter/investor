@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -6,68 +8,96 @@ import 'package:speech/presentation/screens/auth/register/PersonalKnowledge/pers
 import 'package:speech/presentation/widgets/SnackBar.dart';
 import '../../../../../core/config/app_strings.dart';
 import '../../../../../core/routing/navigation_services.dart';
-import 'OtpScreen.dart';
 
 class OtpViewModel with ChangeNotifier {
-
-
-  OtpViewModel();
-
-
   FirebaseAuth auth = FirebaseAuth.instance;
-  String verificationID='';
-
+  String? verificationId;
   bool isLoading=false;
-  bool _isSendSmsLoading=false;
-  bool get isSendSmsLoading => _isSendSmsLoading;
-
-
   int seconds=45;
+  int? resendToken;
+  Timer? timer;
+  bool isTimerStarted = false;
 
-  String title= AppStrings.donotReceive.tr();
 
-  changeTitle(){
-    title="resend".tr();
+  void init(String phoneNumber,bool newAccount,BuildContext context){
+    seconds = 45;
+    isLoading = false;
+    isTimerStarted = false;
     notifyListeners();
+    sendSms(newAccount: newAccount, phoneNumber: phoneNumber, context: context);
+  }
+
+  void startTimer(){
+    seconds = 45;
+    stopTimer();
+    isTimerStarted = true;
+    notifyListeners();
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+
+      if(seconds>0){
+        seconds--;
+        notifyListeners();
+      }else{
+        timer.cancel();
+        isTimerStarted = false;
+        notifyListeners();
+      }
+    });
+  }
+
+  void stopTimer(){
+    if(timer!=null&&timer!.isActive){
+      timer!.cancel();
+    }
   }
 
 
-
-
-  Future sendSms({required bool newAccount,required  phoneNumber,required context}) async {
-    _isSendSmsLoading=true;
-    title= AppStrings.donotReceive.tr();
-    seconds=45;
+  Future sendSms({required bool newAccount,required String phoneNumber,required context}) async {
+    String phone ='';
+    if(phoneNumber.startsWith('0')){
+     phoneNumber =  phoneNumber.replaceFirst('0', '');
+     phone = '+966$phoneNumber';
+    }else{
+      phone = '+966$phoneNumber';
+    }
     notifyListeners();
-    await auth.verifyPhoneNumber(
-      phoneNumber: '+20 10 02459682',
-      verificationCompleted: (PhoneAuthCredential credential) {
-      },
-      verificationFailed: (FirebaseAuthException e) {
-        print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee$e");
-        snackBar(context: context, message: "blockDevice".tr(), color: Colors.red);
-        _isSendSmsLoading=false;
-        notifyListeners();
-      },
-      codeSent: (String verificationId, int? resendToken) {
-        title= AppStrings.donotReceive.tr();
-        seconds=45;
-        notifyListeners();
-        verificationID=verificationId;
-        NavigationService.push( OTP(newAccount: newAccount,phoneNumber: phoneNumber,));
-      },
-      codeAutoRetrievalTimeout: (String verificationId) {},
-    ).then((value) {
-      if(verificationID!=""){
-        _isSendSmsLoading=false;
-        notifyListeners();
-      }
 
-    }).catchError((onError){
-      _isSendSmsLoading=false;
-      notifyListeners();
+    try{
+      await auth.verifyPhoneNumber(
+        phoneNumber:phone,
+        timeout: const Duration(seconds: 45),
+        forceResendingToken: resendToken,
+        verificationCompleted: (PhoneAuthCredential credential) {
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          if (e.code == 'invalid-phone-number') {
+            snackBar(context: context, message: "Phone number is invalid should start with +966 and 9 digits or 10 digits start with zero".tr(), color: Colors.red);
 
-    });
+          }else{
+            snackBar(context: context, message: e.code, color: Colors.red);
+
+          }
+        },
+        codeSent: (String verificationId, int? resendToken) {
+          this.resendToken = resendToken;
+          this.verificationId=verificationId;
+          startTimer();
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          snackBar(context: context, message: "Session expired".tr(), color: Colors.red);
+
+        },
+      ).then((value) {
+
+
+      }).catchError((onError){
+
+
+      });
+    }catch (e){
+
+    }
+
   }
 
 
@@ -75,30 +105,71 @@ class OtpViewModel with ChangeNotifier {
 
   checkSms({required bool newAccount,required context})async{
 
-    isLoading=true;
-    notifyListeners();
-    try{
-      PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationID, smsCode: sms);
-      await auth.signInWithCredential(credential).then((value){
-        print(value);
-        isLoading=true;
-        notifyListeners();
-        NavigationService.pushReplacement( PersonalKnowledgeScreen(newAccount: newAccount,));
-      });
-      if(sms!=verificationID){
-        isLoading=false;
-        notifyListeners();
-      }
-    }catch(e){
-      snackBar(context: context, message: "wrongCode".tr(), color: Colors.red);
-      if (kDebugMode) {
-        print(e);
-      }
+    if(sms.length!=6){
+      snackBar(context: context, message: "Invalid verification code".tr(), color: Colors.red);
+      return;
     }
 
+    if(verificationId!=null){
+      isLoading=true;
+      notifyListeners();
+      try{
+        print('sms=>>>${sms}');
 
-    isLoading=false;
-    notifyListeners();
+        /*PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId!, smsCode: sms);
+        await auth.signInWithCredential(credential).then((value){
+          print(value);
+          isLoading=true;
+          notifyListeners();
+        });
+*/
+        PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId!, smsCode: sms);
+        await auth.signInWithCredential(credential).catchError((onError) {
+          isLoading = false;
+          notifyListeners();
+
+
+          throw onError;
+        }).then((value) {
+          isLoading = false;
+          notifyListeners();
+          stopTimer();
+          seconds = 45;
+          NavigationService.pushReplacement(PersonalKnowledgeScreen(newAccount: newAccount,));
+        });
+
+      }catch(e){
+        print('errrrr=>>>>${e}');
+
+        if (e is FirebaseAuthException) {
+
+          print("error=>>>>>${e.code}");
+
+          if (e.code == "session-expired") {
+            snackBar(context: context, message: "Session expired".tr(), color: Colors.red);
+
+          }else if(e.code=='invalid-verification-code'){
+            snackBar(context: context, message: "Invalid verification code".tr(), color: Colors.red);
+
+          }else{
+            snackBar(context: context, message: e.code, color: Colors.red);
+
+          }
+        }
+
+
+
+
+      }
+
+
+      isLoading=false;
+      notifyListeners();
+    }else{
+      snackBar(context: context, message: "Code not sent".tr(), color: Colors.red);
+
+    }
+
   }
 
 

@@ -14,7 +14,7 @@
   "startup": "رائد اعمال",
   "id": "رقم الهوية",
   "email": "البريد الالكتروني",
-  "phone": "رقم الهاتف",
+  "phone": "رقم الجوال",
   "confirmPassword": "تاكيد كلمة المرور",
   "verify": "تحقق",
   "enterCode": "ادخل الرمز المكون من سته ارقام \n المرسل على الرقم ",
@@ -187,7 +187,7 @@
   "SuccessfullyAdded":"تم الاضافه الي المفضله بنجاح",
   "SuccessfullyDeleted": "تم الحذف من المفضله بنجاح",
   "validEmail": "البريد الالكتروني غير صحيح",
-  "emailUsed": "البريد الالكتروني او رقم الهاتف مستخدمين من قبل",
+  "emailUsed": "البريد الالكتروني او رقم الجوال مستخدمين من قبل",
   "resend": "اعاده ارسال الرمز",
   "Invalid credential": "البريد الالكتروني او كلمه المرور غير صحيحه",
   "dealSuccess": "هل تمت الصفقة بنجاح ؟",
@@ -196,7 +196,10 @@
   "wrongCode": "الكود غير صحيح",
   "wrongPhone": "الرقم غير صحيح",
   "noData": "لايوجد بيانات لعرضها",
-  "blockDevice": "تم حظر هذا الجهاز يوم"
+  "blockDevice": "تم حظر هذا الجهاز يوم",
+  "Phone number is invalid should start with +966 and 9 digits or 10 digits start with zero": "رقم الجوال غير صحيح",
+  "Session expired": "انتهت صلاحية رمز التحقق",
+  "Invalid verification code": "رمز التحقق غير صحيح"
 
 
 

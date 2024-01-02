@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:speech/core/config/app_colors.dart';
 import 'package:speech/core/config/app_strings.dart';
@@ -14,6 +15,7 @@ import 'package:speech/presentation/widgets/AnimatedButton.dart';
 import 'package:speech/presentation/widgets/input_field.dart';
 import '../../../../widgets/logo_container.dart';
 import '../../../../widgets/default_text.dart';
+import '../Otp/OtpScreen.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key? key, this.newAccount = true}) : super(key: key);
@@ -50,51 +52,56 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            LogoContainer(
-              ctx: context,
-              arrowBack: true,
-              height: 19.h,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 2.h,
-                        ),
-                        DefaultText(
-                          title: widget.newAccount == false
-                              ? "updateProfile".tr()
-                              : AppStrings.createAccount.tr(),
-                          size: 16.sp,
-                          color: AppColors.boldText,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        SizedBox(
-                          height: 3.h,
-                        ),
-                        _form(),
-                        SizedBox(
-                          height: 8.h,
-                        ),
-                        _registerButton()
-                      ],
-                    ),
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: AppColors.primaryColor,statusBarIconBrightness: Brightness.light),
+      ),
+
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          LogoContainer(
+            ctx: context,
+            arrowBack: true,
+            height: 19.h,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 2.h,
+                      ),
+                      DefaultText(
+                        title: widget.newAccount == false
+                            ? "updateProfile".tr()
+                            : AppStrings.createAccount.tr(),
+                        size: 16.sp,
+                        color: AppColors.boldText,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      _form(),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      _registerButton()
+                    ],
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -171,7 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       validated: (String value) {
         if (value.trim().isEmpty) {
           return AppStrings.enterMobileNumber.tr();
-        } else if(value.length<10){
+        } else if(value.length<9){
           return "wrongPhone".tr();
         }     else{
           return null;
@@ -218,27 +225,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: AnimatedButton(
-        isLoading:widget.newAccount==false?context.watch<PersonalKnowledgeViewModel>().isSectorLoading: context.watch<OtpViewModel>().isSendSmsLoading,
+        isLoading:widget.newAccount==false?context.watch<PersonalKnowledgeViewModel>().isSectorLoading: false,
         title: widget.newAccount==false?
-        "continue".tr()
-            :AppStrings.createAccount.tr(),
+        "continue".tr() :AppStrings.createAccount.tr(),
         onPressed: () {
           if(widget.newAccount==false){
             Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getSectors(context,);
             Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getCategories(context,);
             NavigationService.push(PersonalKnowledgeScreen(newAccount: widget.newAccount));
           }else{
+
             if (formKey.currentState!.validate()) {
               Provider.of<RegisterViewModel>(context, listen: false).national_num = idController.text;
               Provider.of<RegisterViewModel>(context, listen: false).email = emailController.text;
               Provider.of<RegisterViewModel>(context, listen: false).phone = phoneNumberController.text;
               Provider.of<RegisterViewModel>(context, listen: false).password = passwordController.text;
-              Provider.of<OtpViewModel>(context, listen: false).sendSms(newAccount: widget.newAccount,phoneNumber: phoneNumberController.text,context: context).then((value) {
-                Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getSectors(context,);
-                Provider.of<PersonalKnowledgeViewModel>(context, listen: false).getCategories(context,);
-              }).catchError((onError){
-                print(onError);
-              });
+              NavigationService.push(OTP(newAccount: true,phoneNumber: phoneNumberController.text,));
+
 
             }
 

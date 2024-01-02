@@ -62,7 +62,7 @@ class LoginViewModel with ChangeNotifier {
         }
         snackBar(context: context,message: 'loggedInSuccessfully'.tr(),color: Colors.green );
         saveUserData.saveLoggedIn(true);
-        NavigationService.pushAndRemoveUntil(const HomeLayoutScreen(),);
+        NavigationService.pushAndRemoveUntil( HomeLayoutScreen(),);
       }else{
         if(_userModel?.code ==422||_userModel?.code==401){
           ScaffoldMessenger.of(context).showSnackBar( SnackBar(

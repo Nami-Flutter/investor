@@ -42,6 +42,7 @@ class PersonalKnowledgeViewModel with ChangeNotifier {
 
     ApiResponse responseModel = await personalKnowledgeRepo.getSectors();
 
+    sectorList.clear();
     if (responseModel.response != null &&
         responseModel.response?.statusCode == 200) {
       _isSectorLoading = false;
@@ -72,7 +73,7 @@ class PersonalKnowledgeViewModel with ChangeNotifier {
     notifyListeners();
 
     ApiResponse responseModel = await personalKnowledgeRepo.getCategories();
-
+    categoriesList.clear();
     if (responseModel.response != null &&
         responseModel.response?.statusCode == 200) {
       _isCatLoading = false;

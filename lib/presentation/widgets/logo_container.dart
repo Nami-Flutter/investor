@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -83,9 +85,10 @@ class _LogoContainerState extends State<LogoContainer> {
                           NavigationService.goBack();
                         },
                         icon: Icon(
-                          Icons.arrow_back_outlined,
+                          Platform.isAndroid?
+                          Icons.arrow_back_outlined:Icons.arrow_back_ios,
                           color: Colors.white,
-                          size: 15.sp,
+                          size: 8.w,
                         )),
                     const Expanded(child: SizedBox()),
                     Padding(

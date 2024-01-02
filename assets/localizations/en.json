@@ -185,21 +185,10 @@
   "wrongCode": "The Code Entered Is Wrong",
   "wrongPhone": "Phone number is incorrect",
   "noData": "Do data for show",
-  "blockDevice": "This Device Is Blocked"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "blockDevice": "This Device Is Blocked",
+  "Phone number is invalid should start with +966 and 9 digits or 10 digits start with zero": "Phone number is invalid",
+  "Session expired": "Session expired",
+  "Invalid verification code": "Invalid verification code"
 
 
 }
