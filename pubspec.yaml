@@ -44,7 +44,7 @@ dependencies:
   firebase_core: ^2.24.2
   rounded_loading_button: ^2.1.0
   cupertino_icons: ^1.0.2
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.0
   path_provider: ^2.0.2
   permission_handler: ^8.0.0+2
   material_dialogs: ^1.1.4
