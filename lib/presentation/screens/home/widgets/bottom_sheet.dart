@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'package:speech/core/routing/navigation_services.dart';
 import 'package:speech/presentation/screens/home/Home/HomeViewModel.dart';
 import 'package:speech/presentation/widgets/AnimatedButton.dart';
+import '../../../../core/config/app_colors.dart';
 import '../../../widgets/default_text.dart';
 
 class BottomSheetSetFilter extends StatefulWidget {
@@ -35,7 +36,7 @@ class _BottomSheetSetFilterState extends State<BottomSheetSetFilter> {
                 children: [
                   DefaultText(
                     title: "filter".tr(),
-                    size: 20,
+                    size: 10,
                     color: const Color(0xffB2B5BC),
                   ),
                   TabBar(
@@ -146,7 +147,7 @@ class _BottomSheetSetFilterState extends State<BottomSheetSetFilter> {
       child: AnimatedButton(
         isLoading: data.isSearchLoading,
         title: 'ok'.tr(),
-        backGroundColor: const Color(0xff3E8CAB),
+        backGroundColor: AppColors.primaryColor,
         textColor: Colors.white,
         onPressed: () async {
           await data.getSearchProject(context);

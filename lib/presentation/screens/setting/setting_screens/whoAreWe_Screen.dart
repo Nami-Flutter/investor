@@ -27,12 +27,13 @@ class WhoAreWeScreen extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       height: 25.h,
                       width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(
-                                AppImages.backGround,
-                              ))),
+                      color: AppColors.primaryColor,
+                      // decoration: BoxDecoration(
+                      //     image: DecorationImage(
+                      //         fit: BoxFit.fill,
+                      //         image: AssetImage(
+                      //           AppImages.backGround,
+                      //         ))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -47,7 +48,8 @@ class WhoAreWeScreen extends StatelessWidget {
                           Expanded(
                               child: SvgPicture.asset(
                                 AppImages.logo,
-                            height: 2.5.h,
+                            color: Colors.white,
+                            height: 5.h,
                           )
                           ),
                           IconButton(
@@ -79,20 +81,20 @@ class WhoAreWeScreen extends StatelessWidget {
                   children: [
                     DefaultText(
                         title: AppStrings.whoAreWe.tr(),
-                        size: 20,
+                        size: 14,
                         fontWeight: FontWeight.w400),
                     SizedBox(height: 1.h,),
                     DefaultText(
                         title:
                             "نحن نظاماً متكاملاً للتواصل بين طالبي الاستثمار والمستثمرين، نوفر منصة مريحة وموثوقة لعرض المشاريع والبحث عن المستثمرين المناسبين للاستثمار فيها.",
-                        size: 14,
+                        size: 12,
                         fontWeight: FontWeight.w400,
                         maxLines: 4,
                         color: AppColors.hintText),
                     DefaultText(
                       title:
                           "كما نساعد رواد الأعمال على نشر مشاريعهم بكل سهولة ويسر وعرض جميع المعلومات المهمة المتعلقة بالمشروع بطريقة واضحة وشاملة.",
-                      size: 14,
+                      size: 12,
                       fontWeight: FontWeight.w400,
                       color: AppColors.hintText,
                       maxLines: 4,

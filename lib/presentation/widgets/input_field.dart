@@ -59,6 +59,7 @@ class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style:TextStyle(fontSize:12),
       // onTapOutside: (event) {
       //   FocusManager.instance.primaryFocus?.unfocus();
       // },
@@ -96,7 +97,7 @@ class _InputFieldState extends State<InputField> {
         hintText: widget.hint,
         hintStyle: const TextStyle(
             color: Color(0xffB2B5BC),
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.w400),
         prefixIcon: widget.prefixIcon,
         counterText: '',

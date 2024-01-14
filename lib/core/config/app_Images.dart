@@ -34,6 +34,7 @@ class AppImages {
   static String sendMedia = "assets/images/sendMedia.png";
   static String success = "assets/images/success.png";
   static String bottom = "assets/images/bottom.png";
+  static String iNVESTORLoginLOGO = "assets/images/iNVESTORLoginLOGO.png";
 
 
 

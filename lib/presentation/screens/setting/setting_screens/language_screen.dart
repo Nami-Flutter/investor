@@ -25,15 +25,16 @@ class _LanguageScreenState extends State<LanguageScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              color: AppColors.primaryColor,
               alignment: Alignment.center,
               height: 8.h,
               width: double.infinity,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(
-                        AppImages.backGround,
-                      ))),
+              // decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //         fit: BoxFit.fill,
+              //         image: AssetImage(
+              //           AppImages.backGround,
+              //         ))),
               child: Row(
                 children: [
                   IconButton(
@@ -49,8 +50,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Container(
                         alignment: Alignment.center,
                         // width: 3.w,
-                        height: 2.5.h,
+                        height: 6.h,
                         child:SvgPicture.asset(
+                          color:Colors.white,
                           AppImages.logo,
                         ),
                     ),
@@ -65,7 +67,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: DefaultText(
-                size: 20,
+                size: 17,
                 title: tr("language"),
                 fontWeight: FontWeight.w400,
                 color: AppColors.normalText,
@@ -83,7 +85,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   children: [
                     DefaultText(
                       title: "العربية",
-                      size: 18,
+                      size: 14,
                       fontWeight: FontWeight.w400,
                     ),
                     const Expanded(child: SizedBox()),
@@ -120,7 +122,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   children: [
                     DefaultText(
                       title: "English",
-                      size: 18,
+                      size: 14,
                       fontWeight: FontWeight.w400,
                     ),
                     const Expanded(child: SizedBox()),

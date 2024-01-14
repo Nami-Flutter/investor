@@ -37,7 +37,7 @@ class InvestmentSuccess extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeLayoutScreen()));
                 },
                 title: AppStrings.home.tr(),
-                color: const Color(0xff3E8CAB),
+                color: AppColors.primaryColor,
                 textColor: Colors.white,
               ),
             ),

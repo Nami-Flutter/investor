@@ -76,9 +76,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
     return Container(
       alignment: Alignment.bottomCenter,
       width: double.infinity,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(AppImages.backGround), fit: BoxFit.fill)),
+      color: AppColors.primaryColor,
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         image: AssetImage(AppImages.backGround), fit: BoxFit.fill)),
       child: Column(
         children: [
           _imageAppBar(),
@@ -170,13 +171,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               DefaultText(
                                 title: ordersModel.data![index].project!.name
                                     .toString(),
-                                size: 16,
+                                size: 14,
                                 fontWeight: FontWeight.w500,
                               ),
                               DefaultText(
                                 title: ordersModel.data![index].investor!.name
                                     .toString(),
-                                size: 13,
+                                size: 11,
                                 color: AppColors.normalText,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -189,7 +190,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                         ),
                         DefaultText(
                           title: ordersModel.data![index].created_at.toString(),
-                          size: 13,
+                          size: 11,
                           color: AppColors.hintText,
                           fontWeight: FontWeight.w400,
                         ),
@@ -208,7 +209,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               children: [
                                 DefaultText(
                                   title: "قيمة الإستثمار :",
-                                  size: 13,
+                                  size: 11,
                                   color: AppColors.boldText,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -216,7 +217,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                   title: ordersModel
                                       .data![index].project!.categories!.title
                                       .toString(),
-                                  size: 13,
+                                  size: 11,
                                   color: AppColors.primaryColor,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -229,7 +230,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               children: [
                                 DefaultText(
                                   title: "نوع الجولة :",
-                                  size: 13,
+                                  size: 11,
                                   color: AppColors.boldText,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -237,7 +238,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                   title: ordersModel.data![index].project!
                                       .investmentTour!.title
                                       .toString(),
-                                  size: 13,
+                                  size: 11,
                                   color: AppColors.primaryColor,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -260,7 +261,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
         child: Text(
       ("noData").tr(),
       style: TextStyle(
-        fontSize: 22.sp,
+        fontSize: 12.sp,
         color: AppColors.hintText,
         fontWeight: FontWeight.w300,
       ),

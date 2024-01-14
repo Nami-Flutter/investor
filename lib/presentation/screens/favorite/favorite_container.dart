@@ -54,7 +54,8 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
 
                 SizedBox(height: 1.h,),
 
-                DefaultText(title: widget.favouriteProjectsModel.data![widget.index].details.toString(), size: 16,fontWeight: FontWeight.w400,maxLines: 3,color: AppColors.normalText,),
+                DefaultText(title: widget.favouriteProjectsModel.data![widget.index].details.toString(), size: 12,fontWeight: FontWeight.w400,maxLines: 3,color: AppColors.normalText,),
+                SizedBox(height: 1.h,),
 
                 _investmentKindAndSalary(salary: "25", investmentKind: widget.favouriteProjectsModel.data![widget.index].investmentTour!.title.toString())
               ],
@@ -115,7 +116,7 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
             padding: EdgeInsets.all(10),
             child: DefaultText(
               title: sectorKind,
-              size: 20,
+              size: 14,
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
@@ -129,7 +130,7 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
 
 
   Widget _name({required String name}){
-   return DefaultText(title:name, size: 18,fontWeight: FontWeight.w800,color: Colors.black,);
+   return DefaultText(title:name, size: 14,fontWeight: FontWeight.w800,color: Colors.black,);
   }
 
 
@@ -145,9 +146,9 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
   Widget _projectAndAddressName({required String projectName,required String address}){
    return Row(
      children: [
-       DefaultText(title:projectName , size: 18,fontWeight: FontWeight.w500,),
+       DefaultText(title:projectName , size: 15,fontWeight: FontWeight.w500,),
        const Expanded(child: SizedBox()),
-       DefaultText(title:address, size: 13,fontWeight: FontWeight.w400,color: AppColors.hintText,),
+       DefaultText(title:address, size: 11,fontWeight: FontWeight.w400,color: AppColors.hintText,),
      ],
    );
   }
@@ -158,11 +159,11 @@ class _FavoriteContainerState extends State<FavoriteContainer> {
      children: [
        Image.asset(AppImages.moneyIcon),
        const SizedBox(width: 15,),
-       DefaultText(title: "$salary \$", size: 16,fontWeight: FontWeight.w500,color: const Color(0xffE78F2C),),
+       DefaultText(title: "$salary \$", size: 13,fontWeight: FontWeight.w500,color: const Color(0xffE78F2C),),
        const Expanded(child: SizedBox()),
        Image.asset(AppImages.kindIcon),
        const SizedBox(width: 15,),
-       DefaultText(title: investmentKind, size: 16,fontWeight: FontWeight.w500,color:AppColors.primaryColor,),
+       DefaultText(title: investmentKind, size: 13,fontWeight: FontWeight.w500,color:AppColors.primaryColor,),
      ],
    );
   }

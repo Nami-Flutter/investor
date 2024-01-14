@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           LogoContainer(
-            height: 30.h,
+            height: 31.h,
             arrowBack: false,
             ctx: context,
           ),
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     DefaultText(
                       title: AppStrings.login.tr(),
-                      size: 16.sp,
+                      size: 13.sp,
                       fontWeight: FontWeight.w500,
                       color: AppColors.boldText,
                     ),
@@ -172,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
             color: AppColors.normalText,
             title: AppStrings.remember.tr(),
             fontWeight: FontWeight.w200,
-            size: 7.5.sp,
+            size: 6.5.sp,
           ),
         ],
       ),
@@ -216,7 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
       width: double.infinity,
       alignment: Alignment.center,
       child: ButtonText(
-        textSize: 16.sp,
+        textSize: 12.sp,
         textColor: AppColors.boldText,
         onPress: () {
           NavigationService.push(RegisterScreen());

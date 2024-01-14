@@ -39,7 +39,7 @@ showAnimationDialog({
                           text: titleMessage,
                           style: const TextStyle(
                               fontSize: 15,
-                              fontFamily: "DIN Next LT W23",
+                              fontFamily: "DG Trika",
                               fontWeight: FontWeight.w400,
                               color: AppColors.normalText),
                           children: <TextSpan>[
@@ -50,7 +50,7 @@ showAnimationDialog({
                                   fontSize: 15,
                                   color: AppColors.hintText,
                                   fontWeight: FontWeight.w400,
-                                  fontFamily: "DIN Next LT W23",
+                                  fontFamily: "DG Trika",
                                 )),
                           ],
                         ),

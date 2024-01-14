@@ -62,7 +62,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       child: Row(
         children: [
           DefaultText(title: AppStrings.favorite.tr(),
-            size: 28,
+            size: 17,
             fontWeight: FontWeight.w500,),
           const Expanded(child: SizedBox()),
           Container(
@@ -96,7 +96,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         child: Text(
           ("noData").tr(),
           style: TextStyle(
-            fontSize: 22.sp,
+            fontSize: 12.sp,
             color: AppColors.hintText,
             fontWeight: FontWeight.w300,
           ),

@@ -39,9 +39,9 @@ class _LogoContainerState extends State<LogoContainer> {
               image: DecorationImage(
                   fit: BoxFit.fill,
                   image: AssetImage(
-                    AppImages.backGround,
+                    AppImages.iNVESTORLoginLOGO,
                   ))),
-          child: SvgPicture.asset(AppImages.logo,),
+          //child: SvgPicture.asset(AppImages.logo,),
         ),
         widget.arrowBack == false
             ?

@@ -183,7 +183,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       size: 20.w, color: AppColors.primaryColor),
                   DefaultText(
                     title: "مكالمه فيديو",
-                    size: 22,
+                    size: 10,
                     color: AppColors.normalText,
                   )
                 ],
@@ -202,7 +202,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   Icon(Icons.phone, size: 20.w, color: AppColors.primaryColor),
                   DefaultText(
                     title: "مكامله صوتيه",
-                    size: 22,
+                    size: 10,
                     color: AppColors.normalText,
                   )
                 ],
@@ -356,7 +356,7 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Text(
       ("yourRequestHasNotBeenAnsweredYet").tr(),
       style: TextStyle(
-        fontSize: 22.sp,
+        fontSize: 12.sp,
         color: AppColors.hintText,
         fontWeight: FontWeight.w300,
       ),
@@ -384,7 +384,7 @@ class _ChatScreenState extends State<ChatScreen> {
               decoration: BoxDecoration(
                   color: chatModel.data![index].fromUser!.email ==
                           saveUserData.getUserEmail()
-                      ? const Color(0xff3E8CAB)
+                      ? AppColors.primaryColor
                       : AppColors.hintText,
                   borderRadius:
                       Localizations.localeOf(context).languageCode == 'en' ||

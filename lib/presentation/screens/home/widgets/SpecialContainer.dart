@@ -29,7 +29,7 @@ class FavContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DefaultText(title: AppStrings.specialProjects.tr(), size: 16,color: const Color(0xffE39236),fontWeight: FontWeight.w500,),
+            DefaultText(title: AppStrings.specialProjects.tr(), size: 14,color: const Color(0xffE39236),fontWeight: FontWeight.w500,),
             Row(
               children: [
              _imageProfile(context),

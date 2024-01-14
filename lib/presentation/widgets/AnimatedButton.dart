@@ -23,7 +23,7 @@ class AnimatedButton extends StatelessWidget {
    AnimatedButton(
       {Key? key,
         this.textColor = Colors.white,
-         this.textSize=18,
+         this.textSize=12,
         required this.onPressed,
         required this.title,
         this.width = double.infinity,

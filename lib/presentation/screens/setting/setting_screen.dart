@@ -70,7 +70,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   DefaultText(
                     title: "setting".tr(),
-                    size: 16,
+                    size: 14,
                     fontWeight: FontWeight.w400,
                   ),
                   Divider(
@@ -96,7 +96,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   DefaultText(
                     title: AppStrings.general.tr(),
-                    size: 16,
+                    size: 14,
                     fontWeight: FontWeight.w400,
                   ),
                   Divider(
@@ -133,17 +133,19 @@ class _SettingScreenState extends State<SettingScreen> {
       alignment: Alignment.center,
       height: 8.h,
       width: double.infinity,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                AppImages.backGround,
-              ))),
+      color: AppColors.primaryColor,
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         fit: BoxFit.fill,
+      //         image: AssetImage(
+      //           AppImages.backGround,
+      //         ))),
       child: SizedBox(
         // width: 3.w,
-        height: 2.5.h,
+        height: 6.h,
         child: SvgPicture.asset(
           AppImages.logo,
+          color: Colors.white,
         ),
       ),
     );
@@ -169,7 +171,7 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget _name(UserModel userModel) {
     return DefaultText(
       title:userModel.data==null?"...": userModel.data!.name.toString()!=""? userModel.data!.name.toString():"",
-      size: 16,
+      size: 14,
       fontWeight: FontWeight.w400,
     );
   }
@@ -184,7 +186,7 @@ class _SettingScreenState extends State<SettingScreen> {
         },
         fontWeight: FontWeight.w500,
         color: AppColors.primaryColor,
-        textSize: 14.sp,
+        textSize: 10.sp,
         textColor: Colors.white,
       ),
     );

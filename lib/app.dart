@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GenerateMultiProvider(
       child: MaterialApp(
         theme: ThemeData(
-            fontFamily: "DIN Next LT W23"
+            fontFamily: "DG Trika"
         ),
         debugShowCheckedModeBanner: false,
         supportedLocales: context.supportedLocales,

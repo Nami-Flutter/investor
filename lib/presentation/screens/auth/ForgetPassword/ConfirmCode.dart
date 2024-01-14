@@ -85,12 +85,13 @@ class _ConfirmCode extends State<ConfirmCode> {
       alignment: Alignment.center,
       height: 8.h,
       width: double.infinity,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                AppImages.backGround,
-              ))),
+      color: AppColors.primaryColor,
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         fit: BoxFit.fill,
+      //         image: AssetImage(
+      //           AppImages.backGround,
+      //         ))),
       child: Row(
         children: [
           IconButton(
@@ -105,9 +106,10 @@ class _ConfirmCode extends State<ConfirmCode> {
             child: Container(
               alignment: Alignment.center,
               // width: 3.w,
-              height: 2.5.h,
+              height: 6.h,
               child: SvgPicture.asset(
                 AppImages.logo,
+                color: Colors.white,
               ),
             ),
           ),
@@ -176,7 +178,7 @@ class _ConfirmCode extends State<ConfirmCode> {
           },
           fontWeight: FontWeight.w400,
           backGroundColor: AppColors.primaryColor,
-          textSize: 18,
+          textSize: 14,
           textColor: Colors.white,
         ),
       ),

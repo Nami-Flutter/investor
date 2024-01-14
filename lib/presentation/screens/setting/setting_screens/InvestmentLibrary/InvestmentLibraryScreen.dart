@@ -52,12 +52,13 @@ class _InvestmentLibraryState extends State<InvestmentLibrary> {
       alignment: Alignment.center,
       height: 8.h,
       width: double.infinity,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                AppImages.backGround,
-              ))),
+      color: AppColors.primaryColor,
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         fit: BoxFit.fill,
+      //         image: AssetImage(
+      //           AppImages.backGround,
+      //         ))),
       child: Row(
         children: [
           IconButton(
@@ -72,9 +73,10 @@ class _InvestmentLibraryState extends State<InvestmentLibrary> {
             child: Container(
               alignment: Alignment.center,
               // width: 3.w,
-              height: 3.h,
+              height: 6.h,
               child: SvgPicture.asset(
                 AppImages.logo,
+                color: Colors.white,
               ),
             ),
           ),
@@ -86,11 +88,11 @@ class _InvestmentLibraryState extends State<InvestmentLibrary> {
 
   Widget _constText() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
       child: Row(
         children: [
           DefaultText(
-            size: 20,
+            size: 14,
             title: AppStrings.investmentLibrary.tr(),
             fontWeight: FontWeight.w400,
           )

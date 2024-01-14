@@ -82,4 +82,7 @@ flutter:
     - family: DIN Next LT W23
       fonts:
         - asset: assets/fonts/din-next-lt-w23-regular.ttf
-
+    - family: DG Trika
+      fonts:
+        - asset: assets/fonts/DG Trika Regular.ttf
+        - asset: assets/fonts/DG Trika Bold.ttf

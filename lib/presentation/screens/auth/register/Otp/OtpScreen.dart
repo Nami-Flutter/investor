@@ -48,7 +48,7 @@ class _OTPState extends State<OTP> {
           LogoContainer(
             ctx: context,
             arrowBack: true,
-            height: 22.h,
+            height: 31.h,
           ),
 
           Expanded(
@@ -59,11 +59,11 @@ class _OTPState extends State<OTP> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 20.h,
+                      height: 10.h,
                     ),
                     DefaultText(
                       title: AppStrings.verify.tr(),
-                      size: 16,
+                      size: 14,
                       fontWeight: FontWeight.w500,
                     ),
                     SizedBox(
@@ -76,7 +76,7 @@ class _OTPState extends State<OTP> {
                         text: AppStrings.enterCode.tr(),
                         style: const TextStyle(
                             fontSize: 15,
-                            fontFamily: "DIN Next LT W23",
+                            fontFamily: "DG Trika",
                             fontWeight: FontWeight.w400,
                             color: AppColors.normalText),
                         children: <TextSpan>[
@@ -86,7 +86,7 @@ class _OTPState extends State<OTP> {
                                 fontSize: 15,
                                 color: AppColors.normalText,
                                 fontWeight: FontWeight.w400,
-                                fontFamily: "DIN Next LT W23",
+                                fontFamily: "DG Trika",
                               )),
                         ],
                       ),
@@ -113,9 +113,7 @@ class _OTPState extends State<OTP> {
                     },
 
                     ),
-                    SizedBox(
-                      height: 4.h,
-                    ),
+
                     Consumer<OtpViewModel>(builder: (context,provider,_){
                       return provider.seconds>0?DefaultText(
                         title: provider.isTimerStarted?provider.seconds.toString():'',
@@ -131,14 +129,14 @@ class _OTPState extends State<OTP> {
                         },
                         child: DefaultText(
                           title: 'resend'.tr(),
-                          size: 16,
+                          size: 14,
                           fontWeight: FontWeight.w500,
                           color: AppColors.primaryColor,
                         ),
                       ));
                     }),
                     SizedBox(
-                      height: 11.h,
+                      height: 8.h,
                     ),
                 _button()
                   ],
@@ -166,7 +164,7 @@ class _OTPState extends State<OTP> {
           },
           fontWeight: FontWeight.w400,
           backGroundColor: AppColors.primaryColor,
-          textSize: 18,
+          textSize: 14,
           textColor: Colors.white,
         );
       },),

@@ -69,12 +69,13 @@ class Profile extends StatelessWidget {
       alignment: Alignment.topCenter,
       height: 25.h,
       width: double.infinity,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                AppImages.backGround,
-              ))),
+      color: AppColors.primaryColor,
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         fit: BoxFit.fill,
+      //         image: AssetImage(
+      //           AppImages.backGround,
+      //         ))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -89,7 +90,8 @@ class Profile extends StatelessWidget {
           Expanded(
               child: SvgPicture.asset(
                 AppImages.logo,
-                height: 2.5.h,
+                height: 6.h,
+                color: Colors.white,
               )),
           IconButton(
               onPressed: () {},
@@ -128,7 +130,7 @@ class Profile extends StatelessWidget {
   Widget _address ({required String address}){
     return  DefaultText(
         title:address,
-        size: 16,
+        size: 14,
         color: AppColors.hintText,
         maxLines: 1);
   }
@@ -142,7 +144,7 @@ class Profile extends StatelessWidget {
       ),
       child: DefaultText(
         title: experience,
-        size: 16,
+        size: 14,
         color: AppColors.hintText,
         maxLines: 2,
       ),

@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget  _specialProjectsContainer(value){
     return SizedBox(
-      height: 20.h,
+      height:  value.specialProjectsModel?.data?.length == 0 ? 0 : 20.h,
       child:
       value.isSpecialLoading==true?
       const Center(child:  CircularProgressIndicator(),)
@@ -158,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           DefaultText(
             title: AppStrings.availableChances.tr(),
-            size: 20,
+            size: 14,
             maxLines: 4,
             fontWeight: FontWeight.w400,
           ),
@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text(
           ("noData").tr(),
           style: TextStyle(
-            fontSize: 22.sp,
+            fontSize: 12.sp,
             color: AppColors.hintText,
             fontWeight: FontWeight.w300,
           ),

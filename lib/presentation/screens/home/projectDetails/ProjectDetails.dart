@@ -56,8 +56,9 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-
+                          SizedBox(height: 7,),
                           _projectNameRow(companyName:widget.projectsModel.data![widget.index].name.toString(), profits:widget.projectsModel.data![widget.index].profits.toString()),
+                          SizedBox(height: 7,),
                           _projectDescription(projectDescription:widget.projectsModel.data![widget.index].details.toString()),
                           _link(location: false,imageIcon: AppImages.linkIcon, link:widget.projectsModel.data![widget.index].website.toString()),
                           _link(imageIcon: AppImages.locationIcon, link:widget.projectsModel.data![widget.index].address.toString()),
@@ -149,7 +150,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
                           ),
                           DefaultText(
                             title:"documents".tr(),
-                            size: 16,
+                            size: 14,
                             color: AppColors.normalText,
                             maxLines: 6,
                             fontWeight: FontWeight.w400,
@@ -209,7 +210,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
                 padding: EdgeInsets.all(10),
                 child: DefaultText(
                   title: sectorKind,
-                  size: 20,
+                  size: 14,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -234,11 +235,11 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
               color: Colors.white,
               size: 15.sp,
             )),
-        Expanded(
-            child: SvgPicture.asset(
-              AppImages.logo,
-              height: 2.5.h,
-            )),
+        // Expanded(
+        //     child: SvgPicture.asset(
+        //       AppImages.logo,
+        //       height: 2.5.h,
+        //     )),
         IconButton(onPressed: (){}, icon: const Icon(Icons.add),color: Colors.transparent,)
       ],
     );
@@ -249,13 +250,13 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
       children: [
         DefaultText(
           title: companyName,
-          size: 20,
+          size: 15,
           fontWeight: FontWeight.w500,
         ),
         const Expanded(child: SizedBox()),
         DefaultText(
           title: "$profits \$",
-          size: 20,
+          size: 14,
           color: Color(0xffE28B2A),
           fontWeight: FontWeight.w500,
         ),
@@ -266,7 +267,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
   Widget _projectDescription({required String projectDescription}){
     return  DefaultText(
       title:projectDescription,
-      size: 16,
+      size: 14,
       color: AppColors.normalText,
       maxLines: 6,
       fontWeight: FontWeight.w400,
@@ -309,7 +310,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
           children: [
             DefaultText(
               title:name,
-              size: 16,
+              size: 14,
               color: AppColors.boldText,
               maxLines: 6,
               fontWeight: FontWeight.w500,
@@ -334,7 +335,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
       children: [
         DefaultText(
           title:title,
-          size: 16,
+          size: 14,
           color: AppColors.normalText,
           maxLines: 6,
           fontWeight: FontWeight.w400,
@@ -378,11 +379,11 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
                     maxLines: 10,
                     text:  TextSpan(
                       text: "$title \n",
-                      style: const TextStyle(fontSize: 18,fontFamily: "DIN Next LT W23",fontWeight: FontWeight.w400,color: AppColors.normalText),
+                      style: const TextStyle(fontSize: 15,fontFamily: "DG Trika",fontWeight: FontWeight.w400,color: AppColors.normalText),
                       children: <TextSpan>[
                         TextSpan(
                             text:hint,
-                            style:const  TextStyle(fontSize: 15,color:AppColors.hintText,fontWeight: FontWeight.w400 ,fontFamily: "DIN Next LT W23",)),
+                            style:const  TextStyle(fontSize: 13,color:AppColors.hintText,fontWeight: FontWeight.w400 ,fontFamily: "DG Trika",)),
                       ],
                     ),
                   ),
@@ -492,12 +493,12 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
             maxLines: 10,
             text: const TextSpan(
               text: 'يرجى ملاحظة ، ',
-              style: TextStyle(fontSize: 18, color: AppColors.boldText,fontFamily: "DIN Next LT W23",fontWeight: FontWeight.w400,wordSpacing: 2),
+              style: TextStyle(fontSize: 18, color: AppColors.boldText,fontFamily: "DG Trika",fontWeight: FontWeight.w400,wordSpacing: 2),
               children: <TextSpan>[
                 TextSpan(
                     text:
                         ' أنه يجب دفع رسوم بقيمة 100 دولار عند تقديم طلب الاستثمار ، وسيتم خصمها في حال تم الرد على الطلب .',
-                    style: TextStyle(fontSize: 16,color:AppColors.normalText,fontWeight: FontWeight.w400 ,fontFamily: "DIN Next LT W23",height: 1.5)),
+                    style: TextStyle(fontSize: 14,color:AppColors.normalText,fontWeight: FontWeight.w400 ,fontFamily: "DG Trika",height: 1.5)),
               ],
             ),
           ),
@@ -543,7 +544,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
         },
         fontWeight: FontWeight.w500,
         color: AppColors.primaryColor,
-        textSize: 14.sp,
+        textSize: 10.sp,
         textColor: Colors.white,
       ),
     );

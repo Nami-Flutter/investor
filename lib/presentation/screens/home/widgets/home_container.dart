@@ -79,7 +79,7 @@ class _AllProjectsContainerState extends State<AllProjectsContainer> {
         DefaultText(
           title: widget.allProjects.data![widget.index].businessPioneer!.name
               .toString(),
-          size: 18,
+          size: 13,
           fontWeight: FontWeight.w800,
           color: Colors.black,
         ),
@@ -144,7 +144,7 @@ class _AllProjectsContainerState extends State<AllProjectsContainer> {
             padding: EdgeInsets.all(10),
             child: DefaultText(
               title: sectorKind,
-              size: 20,
+              size: 15,
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
@@ -159,13 +159,13 @@ class _AllProjectsContainerState extends State<AllProjectsContainer> {
       children: [
         DefaultText(
           title: widget.allProjects.data![widget.index].name.toString(),
-          size: 18,
+          size: 15,
           fontWeight: FontWeight.w500,
         ),
         const Expanded(child: SizedBox()),
         DefaultText(
           title: widget.allProjects.data![widget.index].address.toString(),
-          size: 13,
+          size: 11,
           fontWeight: FontWeight.w400,
           color: AppColors.hintText,
         ),
@@ -174,12 +174,15 @@ class _AllProjectsContainerState extends State<AllProjectsContainer> {
   }
 
   Widget _projectDetails() {
-    return DefaultText(
-      title: widget.allProjects.data![widget.index].details.toString(),
-      size: 16,
-      fontWeight: FontWeight.w400,
-      maxLines: 10,
-      color: AppColors.normalText,
+    return Padding(
+      padding: const EdgeInsets.only(top: 5,bottom: 5),
+      child: DefaultText(
+        title: widget.allProjects.data![widget.index].details.toString(),
+        size: 13,
+        fontWeight: FontWeight.w400,
+        maxLines: 10,
+        color: AppColors.normalText,
+      ),
     );
   }
 
@@ -193,7 +196,7 @@ class _AllProjectsContainerState extends State<AllProjectsContainer> {
         ),
         DefaultText(
           title: "${widget.allProjects.data![widget.index].profits}\$",
-          size: 16,
+          size: 13,
           fontWeight: FontWeight.w500,
           color: const Color(0xffE78F2C),
           align: TextAlign.end,
@@ -206,7 +209,7 @@ class _AllProjectsContainerState extends State<AllProjectsContainer> {
         DefaultText(
           title: widget.allProjects.data![widget.index].investmentTour!.title
               .toString(),
-          size: 16,
+          size: 13,
           fontWeight: FontWeight.w500,
           color: AppColors.primaryColor,
         ),

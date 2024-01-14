@@ -14,7 +14,7 @@ class DefaultText extends StatelessWidget {
       title,
       textAlign: align,
       style: TextStyle(
-        fontFamily: "DIN Next LT W23",
+        fontFamily: "DG Trika",
         // decoration:
         // TextDecoration.underline,
         // decorationColor: Colors.blue,

@@ -66,36 +66,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
           LogoContainer(
             ctx: context,
             arrowBack: true,
-            height: 19.h,
+            height: 31.h,
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 30),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 2.h,
-                      ),
-                      DefaultText(
-                        title: widget.newAccount == false
-                            ? "updateProfile".tr()
-                            : AppStrings.createAccount.tr(),
-                        size: 16.sp,
-                        color: AppColors.boldText,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      SizedBox(
-                        height: 3.h,
-                      ),
-                      _form(),
-                      SizedBox(
-                        height: 8.h,
-                      ),
-                      _registerButton()
-                    ],
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        DefaultText(
+                          title: widget.newAccount == false
+                              ? "updateProfile".tr()
+                              : AppStrings.createAccount.tr(),
+                          size: 12.sp,
+                          color: AppColors.boldText,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        SizedBox(
+                          height: 3.h,
+                        ),
+                        _form(),
+                        SizedBox(
+                          height: 8.h,
+                        ),
+                        _registerButton()
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -249,7 +252,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
         },
         fontWeight: FontWeight.w400,
-        textSize: 18,
+        textSize: 14,
         textColor: Colors.white,
       ),
     );

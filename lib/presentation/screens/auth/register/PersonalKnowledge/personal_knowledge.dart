@@ -146,7 +146,7 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
                     children: [
                       DefaultText(
                         title:"personalInformation".tr(),
-                        size: 16.sp,
+                        size: 12.sp,
                         color: AppColors.boldText,
                         fontWeight: FontWeight.w500,
                       ),
@@ -191,7 +191,7 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
                       size: 20.w, color: AppColors.primaryColor),
                   DefaultText(
                     title: AppStrings.camera.tr(),
-                    size: 22,
+                    size: 10,
                     color: AppColors.normalText,
                   )
                 ],
@@ -210,7 +210,7 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
                   Icon(Icons.camera, size: 20.w, color: AppColors.primaryColor),
                   DefaultText(
                     title: AppStrings.gallery.tr(),
-                    size: 22,
+                    size: 10,
                     color: AppColors.normalText,
                   )
                 ],
@@ -380,7 +380,7 @@ class _PersonalKnowledgeScreenState extends State<PersonalKnowledgeScreen> {
           }
         },
         fontWeight: FontWeight.w500,
-        backGroundColor: const Color(0xff3E8CAB),
+        backGroundColor: AppColors.primaryColor,
         textSize: 14.sp,
         textColor: Colors.white,
       ),

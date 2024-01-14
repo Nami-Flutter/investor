@@ -9,6 +9,7 @@ import 'package:speech/injection.dart';
 import 'package:speech/presentation/screens/home_layout/home_layout_screen.dart';
 
 import '../../core/config/app_Images.dart';
+import '../../core/config/app_colors.dart';
 import 'auth/login/login_screen.dart';
 
 
@@ -40,7 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Center(
+        body: Container(
+          color: AppColors.primaryColor,
           child: Stack(
             alignment: Alignment.center,
             children: [

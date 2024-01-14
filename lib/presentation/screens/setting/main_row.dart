@@ -32,7 +32,7 @@ bool? noInternet;
                   children: [
                     DefaultText(
                       title: title,
-                      size: 16,
+                      size: 14,
                       fontWeight: FontWeight.w400,
                       color: AppColors.normalText,
                     ),
