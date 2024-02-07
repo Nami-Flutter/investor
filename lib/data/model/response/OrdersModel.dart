@@ -27,6 +27,7 @@ class Data {
   int? business_pioneer_id;
   int? investor_id;
   int? project_id;
+  int? is_paid;
   String? status;
   String? created_at;
   Project? project;
@@ -37,6 +38,7 @@ class Data {
     this.project,
     this.business_pioneer_id,
     this.project_id,
+    this.is_paid,
     this.status,
     this.investor_id,
     this.investor,
@@ -48,6 +50,7 @@ class Data {
       id: json?["id"] ?? '',
       business_pioneer_id: json?["business_pioneer_id"] ?? '',
       project_id: json?["project_id"] ?? '',
+      is_paid: json?["is_paid"] ?? '',
       status: json?["status"] ?? '',
       investor_id: json?["investor_id"] ?? '',
       created_at: json?["created_at"] ?? '',
@@ -93,6 +96,7 @@ class Project {
   int? partnership_ratio;
   String? attachment;
   int? investment_tour_id;
+  int? is_paid;
   int? investor_id;
   int? business_pioneer_id;
   String? status;
@@ -108,6 +112,7 @@ class Project {
     this.name,
     this.address,
     this.attachment,
+    this.is_paid,
     this.build_up_date,
     this.business_pioneer_id,
     this.contracs,
@@ -160,6 +165,7 @@ class Project {
       sector_id: json?["sector_id"] ?? '',
       partnership_ratio: json?["partnership_ratio"] ?? '',
       attachment: json?["attachment"] ?? '',
+      is_paid: json?["is_paid"] ?? '',
       investment_tour_id: json?["investment_tour_id"] ?? '',
       investor_id: json?["investor_id"] ?? '',
       business_pioneer_id: json?["business_pioneer_id"] ?? '',
@@ -198,6 +204,7 @@ class Project {
     "investor_id": investor_id,
     "investment_tour_id": investment_tour_id,
     "attachment": attachment,
+    "is_paid": is_paid,
     "partnership_ratio": partnership_ratio,
     "sector_id": sector_id,
     "category_id": category_id,

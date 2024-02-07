@@ -541,7 +541,7 @@ class _ChatScreenState extends State<ChatScreen> {
       height: 4.5.h,
       width: 17.w,
       child: MainButton(
-        textSize: 11.sp,
+        textSize: 7.sp,
         color: AppColors.primaryColor,
         title: AppStrings.deal.tr(),
         textColor: AppColors.whiteColor,

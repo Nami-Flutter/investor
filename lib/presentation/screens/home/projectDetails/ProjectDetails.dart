@@ -497,7 +497,7 @@ class _ProjectsDetailsState extends State<ProjectsDetails> {
               children: <TextSpan>[
                 TextSpan(
                     text:
-                        ' أنه يجب دفع رسوم بقيمة 100 دولار عند تقديم طلب الاستثمار ، وسيتم خصمها في حال تم الرد على الطلب .',
+                        ' أنه يجب دفع رسوم بقيمة 100 ريال عند تقديم طلب الاستثمار ، وسيتم خصمها في حال تم الرد على الطلب .',
                     style: TextStyle(fontSize: 14,color:AppColors.normalText,fontWeight: FontWeight.w400 ,fontFamily: "DG Trika",height: 1.5)),
               ],
             ),

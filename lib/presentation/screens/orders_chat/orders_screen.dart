@@ -10,6 +10,7 @@ import 'package:speech/data/model/response/OrdersModel.dart';
 import 'package:speech/presentation/screens/orders_chat/OrdersViewModel.dart';
 import '../../../core/routing/navigation_services.dart';
 import '../../widgets/default_text.dart';
+import '../pay_web_view/pay_web_view.dart';
 import 'chat_screens/chat_screen.dart';
 
 class OrdersScreen extends StatefulWidget {
@@ -28,10 +29,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
   void initState() {
     // TODO: implement initState
     Provider.of<OrdersViewModel>(context, listen: false).tabBarIndex = 0;
-    Provider.of<OrdersViewModel>(context, listen: false)
-        .getCurrentOrders(context);
-    Provider.of<OrdersViewModel>(context, listen: false)
-        .getCompletedOrders(context);
+    Provider.of<OrdersViewModel>(context, listen: false).getCurrentOrders(context);
+    Provider.of<OrdersViewModel>(context, listen: false).getCompletedOrders(context);
     super.initState();
   }
 
@@ -59,13 +58,15 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 number: data.completedOrdersModel.data!.length,
                                 orderImage: AppImages.completeOrders,
                                 ordersModel: data.completedOrdersModel,
+                                typeOrder: 'completedOrders',
                               )
                     :  _orders(
                               isLoading:data.isCurrentLoading ,
                                 ordersModel: data.currentOrdersModel,
                                 number: data.currentOrdersModel.data!.length,
                                 orderImage: AppImages.currentOrders,
-                              ),
+                                typeOrder: 'currentOrders',
+                ),
               ],
             ),
           )),
@@ -124,6 +125,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   Widget _orders({
     required OrdersModel ordersModel,
     required int number,
+    required String typeOrder,//currentOrders  completedOrders
     required String orderImage,
     required bool isLoading,
 
@@ -144,12 +146,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              NavigationService.push(
-                ChatScreen(
-                  ordersModel: ordersModel,
-                  index: index,
-                ),
-              );
+              typeOrder == "currentOrders" && ordersModel.data?[index].is_paid == 0 ?
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PayWebViewScreen(id:ordersModel.data?[index].id ?? 0,),))
+              :
+              NavigationService.push(ChatScreen(ordersModel: ordersModel, index: index,),);
             },
             child: Card(
               margin: EdgeInsets.symmetric(horizontal: 2.h),
