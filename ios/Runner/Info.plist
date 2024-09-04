@@ -45,7 +45,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This app requires to access your photo library to show image on profile.</string>
+	<string>This app requires access to your camera if you want to update your profile picture and show the photo within your profile.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>$(PRODUCT_NAME) contact use</string>
 	<key>NSLocationAlwaysAndWhenInUsageDescription</key>
@@ -59,7 +59,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app requires to access your microphone to record video with your voice send via chat.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app needs to use Photos</string>
+	<string>This app requires access to your photo library if you want to update your profile picture and show the photo within your profile.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
@@ -71,6 +71,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
+    <key>FirebaseAppDelegateProxyEnabled</key>
+    <string>0</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
